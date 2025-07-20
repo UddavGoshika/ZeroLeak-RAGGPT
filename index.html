@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private LLM Chat</title>
+  <style>
+    body { font-family: Arial; background: #f9fafbf5; color: #eee; padding: 20px; }
+    #chat { border: 1px solid #444; padding: 10px; max-width: 600px; margin: auto; background: #1e1e1e; border-radius: 10px; }
+    .bubble { margin: 10px 0; padding: 10px; border-radius: 5px; }
+    .user { background: #333; text-align: right; }
+    .bot  { background: #222; text-align: left; }
+    input[type="text"] { width: 20%; padding: 10px; position: relative;left: 510px; margin-top: 10px; border: none; border-radius: 5px; background: #333; color: #eee; }
+    button { padding: 10px 15px; margin-top: 10px; position: relative;left: 520px;background: #0a84ff; border: none; color: white; border-radius: 5px; cursor: pointer; }
+    .bubble.bot {
+  white-space: normal;
+  line-height: 1.5;
+  font-family: monospace;
+}
+
+</style>
+</head>
+<body>
+  <h2 style="text-align: center; color:#1e1e1e;">🔒 Private RAG Chat</h2>
+  <div id="chat"></div>
+  <input type="text" id="question" placeholder="Ask your question here...">
+  <button onclick="sendMessage()">Ask</button>
+
+  <script>
+    async function sendMessage() {
+      const question = document.getElementById("question").value;
+      if (!question) return;
+
+      const chatBox = document.getElementById("chat");
+      chatBox.innerHTML += `<div class='bubble user'>${question}</div>`;
+      document.getElementById("question").value = "";
+
+      const response = await fetch("http://127.0.0.1:8000/ask", {
+
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: question })
+      });
+      const data = await response.json();
+const formatted = data.answer.replace(/\n/g, "<br>");
+chatBox.innerHTML += `<div class='bubble bot'>${formatted}</div>`;
+        chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to bottom
+    }
+  </script>
+</body>
+</html>
