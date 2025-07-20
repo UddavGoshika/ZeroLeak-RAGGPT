@@ -11,6 +11,8 @@
 
 **PrivateGPT-LocalAI** is a secure, fully offline AI chatbot designed for **organizations** that require **absolute data privacy**. Built with a **Retrieval-Augmented Generation (RAG)** architecture and powered by a **local Large Language Model (LLM)**, it retrieves organization-specific data without connecting to the internet or external APIs.
 
+🚧 🔴**Note:** This is just the beginning. Many features like PDF upload, authentication, document sources (URLs, images, live feeds), and dashboards are **planned but not implemented** due to limited resources. If you believe in the power of open, private AI — feel free to contribute, fork, or support it! 💪
+
 ---
 
 ## ✅ Features
@@ -45,34 +47,11 @@
 
 ---
 
-## 🧱 Tech Stack
-
-- 🔍 **RAG Architecture**
-- 🧠 **Local LLM** (e.g., LLaMA, Mistral, TinyLlama, etc.)
-- 🗃️ **FAISS / ChromaDB** (for vector search)
-- 🛑 **No OpenAI / No Cloud / No Tracking**
-- 🖥️ Python, LangChain, FastAPI (optional)
-
----
-
-## 📦 Installation
-
-```bash
-git clone https://github.com/yourusername/PrivateGPT-LocalAI
-cd PrivateGPT-LocalAI
-# Setup your virtual environment
-pip install -r requirements.txt
-# Run the chatbot
-python main.py
-```
----
-
 # 🔒 PrivateGPT - Offline RAG Chatbot using LLaMA on CPU
 
 > Ask questions about your **PDFs**, **DOCX**, or **Web Links** – securely and offline using a private LLaMA model (GGUF format).
 
-![preview](https://github.com/yourusername/privategpt/assets/demo-screenshot.png)
-
+<img src="https://raw.githubusercontent.com/UddavGoshika/ZeroLeak-RAGGPT/refs/heads/main/privateRag.png">
 ---
 
 ## ⚡ Why This Project?
@@ -99,11 +78,7 @@ python main.py
 
 ---
 
-## 🚀 Demo Preview
 
-https://github.com/yourusername/privategpt/assets/demo-video.mp4 *(Add a screen-recorded demo!)*
-
----
 
 ## 📂 Project Structure
 
@@ -178,6 +153,6 @@ If you found this useful:
 ---
 
 ## 👋 Author
-Made with ❤️ by [Your Name](https://linkedin.com/in/yourname)
+Made with ❤️ by UddavGoshika(https://linkedin.com/in/GoshikaUddav)
 
 
