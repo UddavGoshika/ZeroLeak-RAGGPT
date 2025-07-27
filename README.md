@@ -39,7 +39,7 @@
 
 ## 🛠️ How It Works
 
-1. Load your internal documents into the system.
+1. Load your internal documents into the system.(Inthis I have Used Database.txt Document AND you will see the Result.✅)
 2. Vectorize and store using a local vector DB (e.g., FAISS).
 3. Ask questions via local UI or terminal.
 4. The system fetches relevant context and sends it to your local LLM.
